@@ -39,6 +39,7 @@ nav li a {
 
 nav li a:hover {
     /* changes the background color when hover over the nav option */
+    cursor: pointer;
     background-color: var(--color-accent);
     color: white;
 }
@@ -80,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hyperlink:hover {
+    cursor: pointer;
     color: pink;
 }
 
@@ -131,6 +133,11 @@ h1, h2, h3, h4, h5, h6 {
         "picture description";
 }
 
+div.project:hover {
+    cursor: pointer;
+    background-color: var(--color-navbar);
+}
+
 #website {
     grid-template-areas:
         "title title"
@@ -154,11 +161,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ----------------------------------------
+    Specific Project Page
+   ---------------------------------------- */
+.projectContainer {
+    display: grid;
+    grid-gap: var(--main-grid-gap); /* addes small gap between elements in the grid */ 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 70vh);
+    grid-template-areas: 
+        "mainImg description";
+}
+
+.projectContainer > div {
+    border-radius: var(--main-radius);
+    background: var(--color-content);
+}
+
+.mainImg { grid-area: mainImg; }
+
+.projectContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    border-radius: var(--main-radius);
+}
+
+.projectContainer .description {
+    grid-area: description;
+    padding: 5% 5% 5% 5%;
+}
+
+#websitePage {
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "description description";
+}
+
+/* ----------------------------------------
     Rock, Paper, Scissors Page
    ---------------------------------------- */
 #rpsPage {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 40vmin 40vmin;
+    grid-template-rows: 40vh 40vh;
     grid-template-areas:
         "player result computer"
         "buttons stats streaks";
@@ -206,6 +250,7 @@ svg {
 .buttons button:hover {
     color: white;
     background-color: var(--color-accent);
+    cursor: pointer;
 }
 
 .stats, .streaks {
@@ -257,12 +302,17 @@ svg {
         overflow-x: hidden;
     }
 
-    /* #portrait {
-        border-radius: 100%;
-    } */
-
     #projectsPage {
         grid-template-columns: 1fr;
+    }
+
+    .projectContainer {
+        display: grid;
+        grid-gap: var(--main-grid-gap); /* addes small gap between elements in the grid */ 
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "mainImg"
+            "description";
     }
 
     #rpsPage {

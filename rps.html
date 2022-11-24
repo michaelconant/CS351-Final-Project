@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="scripts/rpsScript.js"></script>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a class="currentPage" href="rps.html">Rock, Paper, Scissors</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="rpsPage">
+
+        <div id="playerMove">
+            <svg viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="1" />
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="19" cy="12" r="1" />
+            </svg>
+        </div>
+
+        <div id="gameResult"></div>
+
+        <div id="computerMove">
+            <svg viewBox="0 0 24 24">
+                <circle cx="5" cy="12" r="1" />
+                <circle cx="12" cy="12" r="1" />
+                <circle cx="19" cy="12" r="1" />
+            </svg>
+        </div>
+
+        <div class="buttons">
+            <h2>Your Move</h2>
+            <button id="rockButton" onclick="playRPS(0)">Rock</button>
+            <button id="paperButton"onclick="playRPS(1)">Paper</button>
+            <button id="scissorsButton"onclick="playRPS(2)">Scissors</button>
+        </div>
+
+        <div class="stats">
+            <h2>Stats</h2>
+            
+            <table>
+                <tr>
+                    <td>Wins</td>
+                    <td id="wins">0</td>
+                </tr>
+                <tr>
+                    <td>Losses</td>
+                    <td id="losses">0</td>
+                </tr>
+                <tr>
+                    <td>Draws</td>
+                    <td id="draws">0</td>
+                </tr>
+                <tr>
+                    <td>Total Games</td>
+                    <td id="totalGames">0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="streaks">
+            <h2>Win Streak</h2>
+            <table>
+                <tr>
+                    <td>Current Streak</td>
+                    <td id="currentWinStreak">0</td>
+                </tr>
+                <tr>
+                    <td>Highest Streak</td>
+                    <td id="highestWinStreak">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

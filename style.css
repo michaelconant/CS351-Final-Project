@@ -1,0 +1,267 @@
+:root {
+    --main-radius: 15px;
+    --main-grid-gap: 0.4rem;
+    --color-bg: #202225;
+    --color-content: #36393f;
+    --color-navbar: #2f3136;
+    --color-accent: #72bb7e;
+    --color-text-general: #dcddde;
+    --color-text-navbar: azure;
+}
+
+/* ----------------------------------------
+    Navigation Bar
+   ---------------------------------------- */
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+nav ul {
+    border-radius: var(--main-radius);
+
+    list-style-type: none;    /* removes bullet points */
+    margin: 0;                /* remove browser default margin */
+    padding: 0;               /* remove browser default padding */
+    overflow: hidden;         /* hides text from overflowing */
+    background-color: var(--color-navbar);
+}
+
+nav li a {
+    float: left;              /* makes the nav bar horizontal */
+    border-right: 1px solid var(--color-bg); /* adds a border between the nav options */
+    display: block;           /* allows specification of padding */
+    color: var(--color-text-navbar);           /* makes the nav options text white, prevents the blue and purple colors indicating they are links */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    /* changes the background color when hover over the nav option */
+    background-color: var(--color-accent);
+    color: white;
+}
+
+.currentPage {
+    /* changes the nav option color to show which is the current page */
+    background-color: var(--color-accent);
+}
+
+/* ----------------------------------------
+    General CSS
+   ---------------------------------------- */
+body {
+    background: var(--color-bg);
+    color: var(--color-text-general)
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-accent);
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    padding-top: var(--main-grid-gap);
+    display: grid;
+    height: 100vh;
+    grid-gap: var(--main-grid-gap); /* addes small gap between elements in the grid */ 
+}
+
+.container > div {
+    border-radius: var(--main-radius);
+    background: var(--color-content);
+}
+
+.hyperlink {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+.hyperlink:hover {
+    color: pink;
+}
+
+/* ----------------------------------------
+    Home Page
+   ---------------------------------------- */
+#index {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 50% 200px;
+    grid-template-areas:
+        "picture summary"
+        "bio bio";
+}
+
+#portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--main-radius);
+}
+
+.bio {
+    grid-area: bio;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px
+}
+.summary {
+    grid-area: summary;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+/* ----------------------------------------
+    Projects Page
+   ---------------------------------------- */
+#projectsPage {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas:
+        "picture title"
+        "picture description";
+}
+
+.picture {
+    grid-area: picture;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: var(--main-radius);
+    border-bottom-left-radius: var(--main-radius);
+}
+
+.title { grid-area: title; }
+.description { 
+    grid-area: description;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* ----------------------------------------
+    Rock, Paper, Scissors Page
+   ---------------------------------------- */
+#rpsPage {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 40vmin 40vmin;
+    grid-template-areas:
+        "player result computer"
+        "buttons stats streaks";
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.5;
+    stroke: var(--color-accent);
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.buttons {
+    grid-area: buttons;
+
+    text-align: center;
+    display: grid;
+    grid-gap: var(--main-grid-gap);
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    padding-left: var(--main-grid-gap);
+    padding-right: var(--main-grid-gap);
+    padding-bottom: var(--main-grid-gap);
+}
+
+.buttons > ul {
+    text-align: center;
+    list-style-type: none;    /* removes bullet points */
+    margin: 0;                /* remove browser default margin */
+    padding: 0;               /* remove browser default padding */
+    overflow: hidden;         /* hides text from overflowing */
+}
+
+.buttons button {
+    color: var(--color-accent);
+    background-color: var(--color-navbar); /* Green */
+    border: none;
+    border-radius: var(--main-radius);
+    font-size: larger;
+}
+
+.buttons button:hover {
+    color: white;
+    background-color: var(--color-accent);
+}
+
+.stats, .streaks {
+    text-align: center;
+    overflow: auto;
+    padding: 
+        var(--main-grid-gap)
+        var(--main-grid-gap)
+        var(--main-grid-gap)
+        var(--main-grid-gap);
+}
+
+.stats table, .streaks table {
+    text-align: left;
+    font-size: larger;
+    margin: auto;
+    width: 100%;
+    background-color: var(--color-navbar);
+    border-radius: var(--main-radius);
+}
+
+#playerMove     { grid-area: player; }
+#gameResult     { grid-area: result; }
+#computerMove   { grid-area: computer; }
+.stats      { grid-area: stats; }
+.streaks    { grid-area: streaks; }
+
+/* ----------------------------------------
+    Responsive Layout
+   ---------------------------------------- */
+
+@media (width <= 900px) {
+    #projectsPage {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (width <= 620px) {
+    #index {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "summary"
+            "bio"
+            "picture";
+    }
+
+    #portrait {
+        border-radius: 100%;
+    }
+
+    #rpsPage {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 30vmin 30vmin 30vmin;
+        grid-template-areas:
+            "player result computer"
+            "buttons buttons stats"
+            "buttons buttons streaks";
+    }
+
+    nav li a {
+        float: none;        /* makes nav bar vertical when on a thinner device */
+        border-right: none; /* removes left over border from the right */
+    }
+}

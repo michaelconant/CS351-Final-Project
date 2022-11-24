@@ -240,15 +240,20 @@ svg {
 @media (width <= 620px) {
     #index {
         grid-template-columns: 1fr;
+        grid-template-rows: 50vh 40vh 60vh;
         grid-template-areas:
             "summary"
             "bio"
             "picture";
     }
 
-    #portrait {
-        border-radius: 100%;
+    #index div {
+        overflow-x: hidden;
     }
+
+    /* #portrait {
+        border-radius: 100%;
+    } */
 
     #projectsPage {
         grid-template-columns: 1fr;

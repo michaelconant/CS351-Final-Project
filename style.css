@@ -172,7 +172,7 @@ div.project:hover {
     display: grid;
     grid-gap: var(--main-grid-gap); /* addes small gap between elements in the grid */ 
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 70vh);
+    grid-template-rows: auto;
     grid-template-areas: 
         "mainImg description";
 }

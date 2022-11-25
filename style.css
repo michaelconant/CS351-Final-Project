@@ -103,17 +103,12 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--main-radius);
 }
 
-.bio {
-    grid-area: bio;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 18px
-}
-.summary {
-    grid-area: summary;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 20px;
+.bio        { grid-area: bio; }
+.summary    { grid-area: summary; }
+.bio, .summary {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 18px;
 }
 
 /* ----------------------------------------
@@ -138,12 +133,6 @@ div.project:hover {
     background-color: var(--color-navbar);
 }
 
-#website {
-    grid-template-areas:
-        "title title"
-        "description description";
-}
-
 .picture {
     grid-area: picture;
     width: 100%;
@@ -151,6 +140,12 @@ div.project:hover {
     object-fit: cover;
     border-top-left-radius: var(--main-radius);
     border-bottom-left-radius: var(--main-radius);
+}
+
+#website {
+    grid-template-areas:
+        "title title"
+        "description description";
 }
 
 .title { grid-area: title; }
@@ -290,16 +285,19 @@ svg {
 
 @media (max-width: 620px) {
     #index {
-        grid-template-columns: 1fr;
-        grid-template-rows: 50vh 40vh 60vh;
+        /* grid-template-rows: 50vh 40vh 60vh; */
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
         grid-template-areas:
             "summary"
             "bio"
             "picture";
     }
 
-    #index div {
-        overflow-x: hidden;
+    #index .bio, #index .summary {
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 16px
     }
 
     #projectsPage {

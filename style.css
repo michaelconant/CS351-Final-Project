@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
    ---------------------------------------- */
 #projectsPage {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 60vh 60vh 60vh;
+    grid-template-rows: auto;
 }
 
 .project {

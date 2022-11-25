@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
    ---------------------------------------- */
 #index {
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 50% 200px;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "picture summary"
         "bio bio";
@@ -297,7 +297,12 @@ svg {
     #index .bio, #index .summary {
         padding-left: 5%;
         padding-right: 5%;
-        font-size: 14px
+        font-size: 14px;
+        overflow-wrap: break-word;
+    }
+
+    #index div {
+        height: auto;
     }
 
     #projectsPage {

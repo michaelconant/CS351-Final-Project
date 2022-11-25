@@ -286,7 +286,7 @@ svg {
 @media (max-width: 620px) {
     #index {
         /* grid-template-rows: 50vh 40vh 60vh; */
-        grid-template-rows: auto;
+        grid-template-rows: auto auto 60vh;
         grid-template-columns: 100%;
         grid-template-areas:
             "summary"
@@ -297,7 +297,7 @@ svg {
     #index .bio, #index .summary {
         padding-left: 5%;
         padding-right: 5%;
-        font-size: 16px
+        font-size: 14px
     }
 
     #projectsPage {

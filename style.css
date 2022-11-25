@@ -197,7 +197,7 @@ div.project:hover {
    ---------------------------------------- */
 #rpsPage {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 40vh 40vh;
+    grid-template-rows: 30vmin 55vmin;
     grid-template-areas:
         "player result computer"
         "buttons stats streaks";

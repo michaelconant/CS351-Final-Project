@@ -2,7 +2,7 @@
 School: CSU East Bay<br>
 Course: CS351 Website Development<br>
 Semester: Fall 2022<br>
-Website Link: [https://michaelconant.github.io/CS351-FinalProject/](https://michaelconant.github.io/CS351-FinalProject/)
+Website Link: [https://michaelconant.github.io/CS351-Final-Project/](https://michaelconant.github.io/CS351-Final-Project/)
 
 ## Requirements
 The following bullet points are the given requirements for the project.

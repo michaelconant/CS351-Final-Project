@@ -1,7 +1,8 @@
 # CS351 Final Project
-School: CSU East Bay
-Course: CS351
-Semester: Fall 2022
+School: CSU East Bay<br>
+Course: CS351 Website Development<br>
+Semester: Fall 2022<br>
+This project can be viewed at [https://michaelconant.github.io/CS351-FinalProject/](https://michaelconant.github.io/CS351-FinalProject/)
 
 ## Requirements
 The following bullet points are the given requirements for the project.
